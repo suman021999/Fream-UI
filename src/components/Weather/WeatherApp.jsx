@@ -14,7 +14,7 @@ const WeatherApp = () => {
       try {
         const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
         const response = await fetch(
-          `${import.meta.env.VITE_WEATHER_LINK}=${apiKey}`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`
         );
         
         if (!response.ok) {
