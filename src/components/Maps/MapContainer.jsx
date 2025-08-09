@@ -105,7 +105,7 @@ const MapContainerComponent = () => {
                 className="h-full w-full"
               >
                 <TileLayer
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  url={`${import.meta.env.VITE_MAP_URL}`}
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 />
                 <Marker 

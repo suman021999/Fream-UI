@@ -12,7 +12,7 @@ const WeatherApp = () => {
   useEffect(() => {
     const fetchWeather = async (lat, lon) => {
       try {
-        const apiKey = '1b1db00c65d20252cea896b52d380a9b';
+        const apiKey = import.meta.env.VITE_WEATHER_API_KEY
         const response = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`
         );
