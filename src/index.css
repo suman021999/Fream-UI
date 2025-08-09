@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 
-/* Light theme */
-body {
-  background-color: white;
-  color: black;
+:root {
+  --bg-primary: #ffffff;
+  --text-primary: #000000;
+  /* other light mode variables */
 }
 
-/* Dark theme */
-.dark body {
-  background-color: #1a202c;
-  color: white;
+.dark {
+  --bg-primary: #1a202c;
+  --text-primary: #ffffff;
+  /* other dark mode variables */
 }

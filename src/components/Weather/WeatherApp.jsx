@@ -1,11 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
+import { useTheme } from '../../hook/ThemeContext';
 
 const WeatherApp = () => {
   const [temperature, setTemperature] = useState(null);
   const [unit, setUnit] = useState('C');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     const fetchWeather = async (lat, lon) => {
@@ -68,11 +70,13 @@ const WeatherApp = () => {
     );
   }
 
-  
+      
+
+
 
   return (
     <div >
-      <div className="bg-white p-8 rounded-xl shadow-lg text-center relative w-64">
+      <div className="relative w-64">
         <button 
           onClick={toggleUnit}
           className="absolute top-3 h-10 w-10 bg-blue-100 rounded-full right-3 text-lg font-medium text-blue-600 hover:bg-blue-300 transition-colors flex justify-center items-center"
@@ -81,7 +85,7 @@ const WeatherApp = () => {
         </button>
 
         <div className="mt-6 flex items-center justify-center">
-          <span className="text-5xl font-bold text-gray-800">
+          <span className={`text-5xl font-bold text-gray-800 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
             {unit === 'C' ? temperature.tempC : temperature.tempF} {unit}°
           </span>
         </div>

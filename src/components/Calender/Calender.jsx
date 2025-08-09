@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTheme } from '../../hook/ThemeContext';
 
 const Calender = () => {
   const [currentDate] = useState(new Date());
@@ -13,12 +14,14 @@ const Calender = () => {
   const day = currentDate.getDate();
   const year = currentDate.getFullYear();
 
+  const { isDarkMode } = useTheme();
+
   return (
     <div>
-      <div className="bg-white p-6 rounded-xl shadow-md text-center w-64">
-        <div className="text-2xl font-semibold text-gray-500">{weekday}</div>
-        <div className="text-5xl font-bold text-blue-600 my-2">{day}</div>
-        <div className="text-xl text-gray-600">
+      <div className="text-center w-64">
+        <div className={`text-2xl font-semibold  ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>{weekday}</div>
+        <div className={`text-5xl font-bold my-2 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>{day}</div>
+        <div className={`text-xl text-gray-600 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
           {month} {year}
         </div>
       </div>

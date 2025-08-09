@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTheme } from "../../hook/ThemeContext";
 
 const DigitalClock = () => {
   const [time, setTime] = useState(new Date());
+  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -24,8 +26,9 @@ const DigitalClock = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-20 p-4 bg-white">
-        <div className=" text-black font-mono text-4xl mt-2 rounded-lg inline-flex items-center">
+      <div className="flex flex-col items-center justify-center h-20 p-4 ">
+        <div 
+        className={`font-bold text-4xl mt-2 rounded-lg inline-flex items-center ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
               <span className="time-segment">{formatTime(hours)}</span>
               <span className="time-separator mx-1">:</span>
               <span className="time-segment">{minutes}</span>
