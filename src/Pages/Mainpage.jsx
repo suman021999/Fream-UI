@@ -21,11 +21,11 @@ const Mainpage = () => {
       >
         <div className={`p-4 flex gap-4 rounded-lg shadow-md h-[90vh] w-[80vw] border-4  ${isDarkMode ? 'bg-[#dbe1e312] border-amber-50' : 'bg-[#dbe1e39d] border-gray-700'}`}>
 
-          <div className='flex gap-3 h-[88vh]'>
+          <div className='flex flex-col gap-3 h-[88vh]'>
 
             <div className='flex flex-col gap-4 w-[55vw]'>
 
-              <div className='flex gap-4 h-[40vh]'>
+              <div className='flex flex-col gap-4 h-[40vh]'>
                 <div className={`flex justify-center items-center w-[500px] border-4 ${isDarkMode ? 'bg-[#dbe1e312] border-amber-50' : 'bg-[#dbe1e39d] border-gray-700'}`}
                 >
                   <WeatherApp /></div>
